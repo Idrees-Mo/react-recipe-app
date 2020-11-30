@@ -7,7 +7,7 @@ import {
   Jumbo,
 } from './style'
 
-export default function () {
+export default function Header2() {
   return (
     <Header>
       <Navbar />
