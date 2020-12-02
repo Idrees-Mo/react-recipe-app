@@ -19,7 +19,7 @@ const RecipeCard = ({ recipe }) => {
       <h2 onClick={viewRecipe}>View Recipe</h2>
       <Title>{title}</Title>
       <Heart onClick={heartClick}>
-        {fav ? <FaHeart style={{ color: 'red' }} /> : <FaRegHeart />}
+        {fav ? <FaHeart style={{ color: 'orange' }} /> : <FaRegHeart />}
       </Heart>
     </Card>
   )

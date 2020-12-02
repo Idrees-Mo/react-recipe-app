@@ -1,4 +1,4 @@
-import { FETCH_RECIPES, UPDATE_FAV_RECIPES, FETCH_RECIPE, TOGGLE_MODAL } from "../Types"
+import { FETCH_RECIPES, UPDATE_FAV_RECIPES, FETCH_RECIPE, TOGGLE_MODAL, TOGGLE_LOADING, SET_ERROR } from "../Types"
 
 export default function (state, action) {
   switch (action.type) {
@@ -23,10 +23,10 @@ export default function (state, action) {
     case FETCH_RECIPES:
       return {
         ...state,
-        recipes: action.payload
+        foodName: action.payload.foodName,
+        recipes: action.payload.recipes
       }
     case FETCH_RECIPE:
-      console.log(action.payload)
       return {
         ...state,
         recipe: action.payload
@@ -37,7 +37,16 @@ export default function (state, action) {
         ...state,
         showModal: !state.showModal
       }
-
+    case TOGGLE_LOADING:
+      return {
+        ...state,
+        loading: !state.loading
+      }
+    case SET_ERROR:
+      return {
+        ...state,
+        error: action.payload || null
+      }
     default: {
       return state
     }

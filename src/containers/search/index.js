@@ -2,14 +2,18 @@ import React, { useContext, useState } from 'react'
 import { withRouter } from 'react-router-dom'
 import RecipeContext from '../../context/RecipeContext'
 import { FaSearch } from "react-icons/fa";
-import { Btn, Form, Input, SearchWrapper, Suggestion } from './style'
+import { Btn, Form, Input, Suggestion } from './style'
 
 const SearchForm = (props) => {
-  const { fetchRecipes } = useContext(RecipeContext)
+  const { fetchRecipes, setError } = useContext(RecipeContext)
   const [foodName, setFoodName] = useState('')
 
   const onsubmit = (e) => {
     e.preventDefault()
+    if (foodName === '') {
+      setError({ message: `Please enter food name` })
+      return
+    }
     fetchRecipes(foodName)
     setFoodName('')
     props.history.push('/');

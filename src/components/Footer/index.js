@@ -3,7 +3,6 @@ import { Footer } from './style'
 
 export default function index() {
   return (
-    <Footer> this is the footer</Footer>
-
+    <Footer> Made with ❤ & React by <span>Mu Idrees</span> </Footer>
   )
 }

@@ -1,4 +1,5 @@
-import React, { useContext, useState, useRef } from 'react'
+import React, { useContext, useState, useRef, useEffect } from 'react'
+import { FaTimes } from "react-icons/fa";
 import RecipeContext from '../../context/RecipeContext'
 import Tab from '../Tab'
 import {
@@ -13,8 +14,21 @@ import {
 
 export default () => {
   const { recipe, toggleModal } = useContext(RecipeContext)
-
   const [active, setActive] = useState(true)
+
+  const setHidden = () => {
+    document.body.style.overflow = 'hidden';
+  }
+  const RemoveHidden = () => {
+    document.body.style.overflow = 'auto';
+  }
+
+  useEffect(() => {
+    setHidden()
+    return () => {
+      RemoveHidden()
+    }
+  }, [])
 
   const modalRef = useRef();
   const closeModal = e => {
@@ -38,12 +52,13 @@ export default () => {
       <Container>
         <Img src={recipe.image}></Img>
         <Header>
-          <Title>{recipe.title}</Title>
-          <Tab modalTab setActive={setActive} />
+          <Title>{recipe.title} </Title>
+          <Tab modalTab setActive={setActive} active={active} />
           <Content>
             {active ? IngTable : InsSteps}
           </Content>
         </Header>
+        <span className="close" onClick={toggleModal}><FaTimes /></span>
       </Container>
     </Modal>
   )

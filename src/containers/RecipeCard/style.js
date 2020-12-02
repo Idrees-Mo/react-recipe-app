@@ -8,7 +8,7 @@ width:210px;
 height:270px;
 padding:7px;
 color:#fff;
-font-size:18px;
+font-size:20px;
 margin:20px 10px;
 background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)),url(${props => props.url});
 background-size:cover;
@@ -20,17 +20,19 @@ transition: all .3s ease-in-out;
 box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 overflow:hidden;
 & h2 {
+font-family: 'Sansita Swashed', cursive;
+letter-spacing:3px;
   display:block;
   position:absolute;
   left:0px;
   bottom:-70px;
   width:100%;
   text-align:center;
-  padding:20px 0;
-  font-size:16px;
-  background-color:rgba(0, 0, 0, 0.6);
+  padding:10px 0;
+  font-size:20px;
+  background-color:rgba(0, 0, 0, 0.7);
   cursor: pointer;
-  color:tomato;
+  color:orange;
   transition: all .3s ease-in-out;
   opacity:0.9;
 :hover {
@@ -56,4 +58,7 @@ export const Heart = styled.div`
 font-size:18px;
 color:#fff;
 cursor: pointer;
+:hover{
+  color:orange;
+}
 `
