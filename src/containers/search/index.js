@@ -25,7 +25,7 @@ const SearchForm = (props) => {
         onChange={(e) => setFoodName(e.target.value)}
       />
       <Btn type="submit"><FaSearch /></Btn>
-      <Suggestion><span>Suggested: </span>chicken curry, pasta , cake, cookies & more</Suggestion>
+      <Suggestion><span>Suggested: </span>pasta, chicken, pizza, cake, cookies & more</Suggestion>
     </Form>
   )
 }

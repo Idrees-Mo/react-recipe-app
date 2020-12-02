@@ -13,7 +13,7 @@ export default ({ modalTab, setActive, active, recipes, foodName }) => {
         {modalTab ? <Navlink onClick={() => setActive(true)} className={active && 'active'} tab >Ingredients</Navlink> :
           <Navlink to='/' className={activeL && 'active'} onClick={() => setActiveL(true)} >{Link}</Navlink>}
         {modalTab ? <Navlink onClick={() => setActive(false)} className={!active && 'active'} tab  >Instrucions</Navlink> :
-          <Navlink to='/favRecipes' className={!activeL && 'active'} onClick={() => setActiveL(false)}>Faviourite Recipes</Navlink>}
+          <Navlink to='/favRecipes' className={!activeL && 'active'} onClick={() => setActiveL(false)}>Favourite Recipes</Navlink>}
       </Menu>
     </Tab>
   )
