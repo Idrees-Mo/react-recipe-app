@@ -30,19 +30,13 @@ const RecipeState = (props) => {
   const fetchRecipes = async (foodName) => {
     const url = `${base_url}complexSearch?apiKey=${api_key}&query=${foodName}&number=30`
     toggleLoading()
-    setError()
     try {
       const response = await axio.get(url)
       const recipes = response.data.results
-      console.log(recipes)
       if (recipes === undefined || recipes.length === 0) {
         setError({ message: `can't find recipe for ${foodName}` })
-        dispatch({
-          type: FETCH_RECIPES,
-          payload: { foodName: null, recipes }
-        })
         toggleLoading()
-        return
+        return;
       }
       dispatch({
         type: FETCH_RECIPES,
@@ -93,7 +87,6 @@ const RecipeState = (props) => {
   }
 
   const setError = (error) => {
-    console.log(error)
     dispatch({
       type: SET_ERROR,
       payload: error,
