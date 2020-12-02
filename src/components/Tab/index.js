@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Menu, Navlink, Tab } from './style'
 
 export default ({ modalTab, setActive, active, recipes, foodName }) => {
-  const Link = foodName !== null ? `${foodName.toUpperCase()}'s Top Recipes` : 'Top Recipes'
+  const Link = foodName !== null ? `${foodName}'s Top Recipes` : 'Top Recipes'
   const [activeL, setActiveL] = useState(true)
   useEffect(() => {
     setActiveL(true)
