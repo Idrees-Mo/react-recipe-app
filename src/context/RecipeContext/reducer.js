@@ -23,7 +23,7 @@ export default function (state, action) {
     case FETCH_RECIPES:
       return {
         ...state,
-        foodName: action.payload.foodName.toUpperCase(),
+        foodName: action.payload.foodName,
         recipes: action.payload.recipes
       }
     case FETCH_RECIPE:
