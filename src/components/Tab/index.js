@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, Navlink, Tab } from './style'
 
-export default ({ modalTab, setActive, active, recipes, foodName }) => {
+export default ({ modalTab, setActive, active, foodName }) => {
   const Link = foodName !== null ? `${foodName}'s Top Recipes` : 'Top Recipes'
   const [activeL, setActiveL] = useState(true)
   useEffect(() => {
     setActiveL(true)
-  }, [recipes])
+  }, [foodName])
   return (
     <Tab>
       <Menu>
