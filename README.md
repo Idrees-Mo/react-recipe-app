@@ -6,4 +6,4 @@ The main technologies used in the app are React JS, Styled Components, and Conte
 
 Thanks 
 
-                                                                           Build with Love & React JS by Idrees Mu.
+                                               Build with Love & React JS by Idrees Mu.
